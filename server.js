@@ -17,7 +17,7 @@ app.post("/generateblog", async (req, res) => {
 
     const response = await ai.models.generateContent({
       model: "gemini-2.5-flash",
-      contents: prompt,
+      contents: `${prompt} Write a detailed blog of around 1000 words with proper formatting, bold headings, and paragraphs. in simple english`,
     });
 
     res.json({ blog: response.text || "No content generated." });

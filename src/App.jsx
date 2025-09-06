@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { marked } from "marked";
 import "./App.css";
 
 function App() {
@@ -28,7 +29,12 @@ function App() {
       });
 
       const data = await response.json();
-      setBlog(data.blog || "No blog generated.");
+
+      // inside generateBlog
+      let formatted = data.blog || "No blog generated.";
+      formatted = marked(formatted); // converts markdown → HTML
+      setBlog(formatted);
+
     } catch (err) {
       setBlog("Error generating blog: " + err.message);
     } finally {
@@ -64,9 +70,9 @@ function App() {
               <p>Generating blog... Please wait.</p>
             </div>
           ) : blog ? (
-            <p>{blog}</p>   
+            <div dangerouslySetInnerHTML={{ __html: blog }}></div>
           ) : (
-          <p>Your generated blog will appear here...</p>
+            <p>Your generated blog will appear here...</p>
           )}
         </div>
       </div>
