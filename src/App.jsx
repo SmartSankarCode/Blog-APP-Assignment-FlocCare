@@ -22,7 +22,7 @@ function App() {
     setBlog("");
 
     try {
-      const response = await fetch("http://localhost:5000/generateblog", {
+      const response = await fetch("https://blog-app-assignment-floccare.onrender.com/generateblog", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt }),
