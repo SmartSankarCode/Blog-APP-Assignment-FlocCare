@@ -10,6 +10,10 @@ app.use(express.json());
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
+app.get("/", (req, res) => {
+  res.send("Welcome to Smart Sankar Code! Backend is working fine.");
+})
+
 app.post("/generateblog", async (req, res) => {
   try {
     const { prompt } = req.body;
