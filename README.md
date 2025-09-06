@@ -5,6 +5,15 @@ This project is a simple web application that allows users to generate a detaile
 
 ---
 
+## Live Demo
+
+Check out the live demo of the project here: [Smart Sankar Code Blog App](https://smartsankarcode-blog-app.netlify.app)
+
+**Note:** Generating the blog may take a few seconds because the backend is hosted on Render, which can cause slight delays for API responses.
+
+
+---
+
 ## Features
 - Enter a topic to generate a blog.
 - Loading indicator while the blog is being generated.
